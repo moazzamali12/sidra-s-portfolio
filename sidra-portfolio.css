@@ -594,3 +594,71 @@ header {
   font-size: 17px;
   margin-left: 12px;
 }
+
+/* Footer section ----------------------- */
+footer {
+  display: flex;
+  gap: 9em;
+  justify-content: center;
+  align-items: flex-start;
+  background-color: #081736;
+  color: white;
+  padding: 2em 0;
+  border-bottom: 0.5px solid gray;
+}
+
+.footer-left-section {
+  width: 22%;
+  color: gray;
+}
+.footer-left-section-heading {
+  color: white;
+  font-size: 1.2rem;
+  font-weight: 700;
+  margin-bottom: 0.6em;
+}
+
+.footer-links {
+  width: 22%;
+  
+}
+.quick-links-text {
+  display: block;
+  margin-bottom: 1em;
+}
+.footer-links-container {
+  display: flex;
+  align-items: flex-start;
+  gap: 6em;
+}
+.footer-links-column {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  
+}
+.footer-links-column a{
+  text-decoration: none;
+  color: gray;
+  margin-bottom: 0.5em;
+}
+
+.fa-brands, .fa-regular {
+  text-decoration: none;
+  color: white;
+  margin-right: 1em;
+  font-size: large;
+  background-color: #2c497f58;
+  padding: 0.5em;
+  border-radius: 5px;
+}
+.author {
+  background-color: #081736;
+  color: gray;
+  
+}
+.author p{
+  text-align: end;
+  margin-right: 2em;
+  margin-bottom: 1em;
+}
