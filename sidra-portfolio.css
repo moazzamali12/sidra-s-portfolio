@@ -526,6 +526,8 @@ header.scrolled {
 
 .project-back {
   position: absolute;
+  top: 0;
+  left: 0;
   background-color: var(--navy);
   color: white;
   transform: rotateY(180deg);
