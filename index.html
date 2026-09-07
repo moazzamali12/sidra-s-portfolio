@@ -1,28 +1,33 @@
 <!DOCTYPE html> 
 <html lang="en">
   <head>
-    <title>Sidra Portfolio</title>
-    <meta name="viewport" content="width=device-width, initial-scal=1.0">
+    <title>Sidra Ghouri | Electrical Engineer</title>
+    <link rel="icon" type="image/stm-png" href="images/icons/stm-logo-icon.png">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="sidra-portfolio.css">
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Bonheur+Royale&display=swap" rel="stylesheet">
+
+  
+    <link href="https://fonts.googleapis.com/css2?family=Hind+Vadodara:wght@300;400;500;600&family=IBM+Plex+Mono:wght@100;200;300;400&family=Space+Grotesk:wght@400;500;700;800;900&display=swap" rel="stylesheet">
+
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
   </head>
   <body>
     <header>
       <nav class="header-left-section">
-        <h1 class="logo-text">Portfolio.</h1>
+        <h1 class="logo-text">STM.</h1>
       </nav>
 
       <nav class="header-middle-section">
-        <a href="">Home</a>
-        <a href="">About</a>
-        <a href="">Skills</a>
-        <a href="">Projects</a>
-        <a href="">Experience</a>
-        <a href="">Certificates</a>
-        <a href="">Contact</a>
+        <a href="#hero-section-bg" class="header-home">Home</a>
+        <a class="hide-header-link" href="#about-me-section">About</a>
+        <a class="hide-header-link" href="#skills-section">Skills</a>
+        <a href="#projects-section">Projects</a>
+        <a class="hide-header-link" href="#experience-section">Experience</a>
+        <a class="hide-header-link" href="#certificates-section">Certificates</a>
+        <a href="#contact-section">Contact</a>
       </nav>
 
       <nav class="header-right-section">
@@ -31,7 +36,8 @@
         </button>
         <button class="header-resume-button">
           <img src="images/icons/sticky-note.png" alt="">
-          <p>Resume</p>
+          <!-- <i class="fa-solid fa-file"></i> -->
+          <a class="header-resume-link" href="#contact-section">Resume</a>
         </button>
       </nav>
     </header>
@@ -42,25 +48,27 @@
         <h1 class="hero-section-name">Sidra Tul Muntaha <span class="ghouri">Ghouri</span></h1>
         <p class="hero-section-profession">Electrical Design Engineer</p>
         <p class="hero-section-description">5+ years of industrial experience in switchgear panel design, solar systems and electrical estimation. Specialized in EPLAN Electric P8, AutoCAD and LV system documentation for global clients.</p>
-        <button class="view-projects-button">View Projects &rarr;</button>
+
+        <a class="view-projects-button" href="#projects-section">View Projects &rarr;</a>
+       
         
       </div>
-      <div class="hero-section-right">
+      <div class="hero-section-right hide-hero-section-right" >
         <img class="hero-section-dp" src="images/profile-pic.png" alt="">
         <div class="hero-section-circle"></div>
         <div class="hero-section-signature">Sidra tul Muntaha</div>
       </div>
       <div class="arrow-down-div">
-        <button class="arrow-down-button">&#x21e3;</button>
+        <p class="arrow-down-button">&#x21e3;</p>
       </div>
       
     </section>
 
 <!--About ME section below-->
 
-    <section class="about-me-section">
+    <section id="about-me-section">
       <div class="about-me-left-section">
-        <img class="about-me-image" src="images/Murree-electric-buses.jpg" alt="">
+        <img class="about-me-image" src="images/work-desk.jpg" alt="">
       </div>
       <div class="about-me-right-section">
         <p class="about-me">ABOUT ME</p>
@@ -87,7 +95,7 @@
     </section>
 
   <!--Skills section below-->
-    <section class="skills-section">
+    <section id="skills-section">
       <div class="technical-skills">TECHNICAL SKILLS</div>
       <div class="tools-heading">TOOLS & TECHNOLOGIES</div>
 
@@ -133,7 +141,7 @@
             <img class="tool-icon" src="images/icons/sketch-up.png" alt="">
           </div>
           
-          <p class="tool-name">SkecthUP</p>
+          <p class="tool-name">SketchUP</p>
           <p class="tool-description">Intuitive 3D architectural modeling</p>
         </div>
         <div class="tool-card">
@@ -151,9 +159,9 @@
     </section>
    
   <!-- Project Sections below   -->
-    <section class="projects-section">
-      <div class="career-path">PORTFOLIO</div>
-      <div class="experience-heading">FEATURED PROJECTS</div>
+    <section id="projects-section">
+      <div class="projects-section-mini-heading">PORTFOLIO</div>
+      <div class="projects-section-big-heading">FEATURED PROJECTS</div>
 
       <div class="projects-container">
 
@@ -161,7 +169,7 @@
           <div class="project-inner">
 
             <div class="project-front">
-              <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQPPAfyKimo8WQS--k497ihyFN1isS4hfLjdVIftleaWn4j2iJvJ0tO7BOH&s=10" alt="">
+              <img src="images/projects/2MW-textile-mill.jpg" alt="">
               <div class="project-heading">2MW Textile Mill LV Switchgear</div>
               <div class="project-description">Complete design and engineering of low-voltage switchgear panels for a 2MW textile manufacturing facility. Delivered single-line diagrams, wiring schematics, BOM, and IEC 61439 compliance documentation.</div>
               <div class="project-buttons-container">
@@ -216,7 +224,7 @@
            <div class="project-inner">
 
             <div class="project-front">
-              <img src="https://africasolarhub.com/wp-content/uploads/2026/04/Panoramic-view-of-the-500kW-solar-system-on-the-roof-of-the-Lagos-factory.webp" alt="">
+              <img src="images/projects/rooftop-solar.jpg" alt="">
               <div class="project-heading">500kW Commercial Rooftop Solar</div>
               <div class="project-description">End-to-end design of a 500kW rooftop solar PV system for a commercial warehouse complex. Performed energy yield simulation, string sizing, inverter selection, and grid compliance documentation.</div>
               <div class="project-buttons-container">
@@ -272,7 +280,7 @@
            <div class="project-inner">
 
             <div class="project-front">
-              <img src="https://files.huamei-electrical.com/upload/d/file/efpub/5208980d056581231ce82cf17626be7f.webp" alt="">
+              <img src="images/projects/5mva-hospital.jpg" alt="">
               <div class="project-heading">5MVA Hospital Power Study</div>
               <div class="project-description">Comprehensive load flow analysis, short circuit calculations, and protective device coordination for a 5MVA hospital facility. Ensured optimal performance and compliance with IEC 61439 standards.</div>
               <div class="project-buttons-container">
@@ -328,7 +336,7 @@
            <div class="project-inner">
 
             <div class="project-front">
-              <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRy2GC1QsWoBLfuvNYORl7aQvl1n-HDqbNQfF_oocRSIF0J7CO0d4-uRUY&s=10" alt="">
+              <img src="images/projects/hospital-boq.jpg" alt="">
               <div class="project-heading">10kV Hospital Electrical BOQ</div>
               <div class="project-description">Comprehensive Bill of Quantities preparation, cost estimation, and technical bid evaluation for a large-scale 10kV hospital electrical installation. Managed a budget exceeding $500K USD..</div>
               <div class="project-buttons-container">
@@ -384,7 +392,7 @@
 
   <!-- Experience section below -->
 
-    <section class="experience-section">
+    <section id="experience-section">
       <div class="career-path">CAREER PATH</div>
       <div class="experience-heading">WORK EXPERIENCE</div>
 
@@ -436,7 +444,7 @@
     </section>
 
 <!-- Certificates section below -->
-    <section class="certification-section">
+    <section id="certificates-section">
       <div class="career-path">CREDENTIALS</div>
       <div class="experience-heading">CERTIFICATIONS</div>
 
@@ -473,7 +481,7 @@
 
 <!-- Contact section below -->
 
-    <section class="contact-section">
+    <section id="contact-section">
       <div class="career-path">CONTACT</div>
       <div class="experience-heading">GET IN TOUCH</div>
 
@@ -482,15 +490,15 @@
         <form action="" class="custom-form">
           <div class="form-group">
             <label for="name">NAME</label>
-            <input type="text" placeholder="Your Name">
+            <input type="text" id="name" placeholder="Your Name">
           </div>
           <div class="form-group">
             <label for="Email">EMAIL</label>
-            <input type="text" name="Email" placeholder="Your Email">
+            <input type="text"  id="Email" placeholder="Your Email">
           </div>
           <div class="form-group">
-            <label for="Contact">CONTACT NO.</label>
-            <input type="number" placeholder="Contact Number">
+            <label for="Contact-no">CONTACT NO.</label>
+            <input type="tel" id="Contact-no" placeholder="Contact Number">
           </div>
           <div class="form-group">
             <label for="message">MESSAGE</label>
@@ -505,11 +513,11 @@
         <img class="resume-icon" src="images/icons/sticky-note.png" alt="">
         <div class="resume-heading">Download Resume</div>
         <div class="resume-description">Get a comprehensive overview of my experience and skills</div>
-        <a href="sidra-resume.pdf" download="sidra-resume.pdf">
-          <button class="download-button">
+        <a class="download-button" href="sidra-resume.pdf" download="sidra-resume.pdf">
+          
           <img class="download-icon" src="images/icons/download-icon.png" alt="">
           <p>Download PDF</p>
-        </button>
+        
         </a>
         
            <div class="about-me-numbers">
@@ -533,25 +541,25 @@
     </section>
 
   <!-- Footer section below -->  
-   <footer>
+   <footer id="footer-section">
     <div class="footer-left-section">
-      <div class="footer-left-section-heading">Sidra Tul Muntah Ghouri</div>
-      <div>Electrical Design Engineer specializeing in switchgear, solar systems, and electrical estimation for global clients.</div>
+      <div class="footer-left-section-heading">Sidra Tul Muntaha Ghouri</div>
+      <div>Electrical Design Engineer specializing in switchgear, solar systems, and electrical estimation for global clients.</div>
     </div>
 
     <div class="footer-links">
       <p class="quick-links-text">QUICK LINKS</p>
       <div class="footer-links-container">
         <div class="footer-links-column">
-        <a href="">Home</a>
-        <a href="">About</a>
-        <a href="">Skills</a>
-        <a href="">Projects</a>
+        <a href="#hero-section-bg">Home</a>
+        <a href="#about-me-section">About</a>
+        <a href="#skills-section">Skills</a>
+        <a href="#projects-section">Projects</a>
       </div>
       <div class="footer-links-column">
-        <a href="">Experience</a>
-        <a href="">Certificates</a>
-        <a href="">Contact</a>
+        <a href="#experience-section">Experience</a>
+        <a href="#certificates-section">Certificates</a>
+        <a href="#contact-section">Contact</a>
       </div>
       </div>
       
@@ -560,19 +568,20 @@
 
     <div class="footer-social-links">
       <p class="quick-links-text">CONNECT</p>
-      <a href="">
+      <a href="https://wa.me/3158302621" target="_blank">
         <i class="fa-brands fa-whatsapp"></i>
       </a>
-      <a href="">
+      <a href="https://www.linkedin.com/in/sidra-tul-muntaha-ghouri/" target="_blank">
         <i class="fa-brands fa-linkedin"></i>
       </a>
-      <a href="">
+      <a href="mailto: sidratulmuntaha135@gmail.com" target="_blank">
         <i class="fa-regular fa-envelope"></i>
       </a>
     </div>
    </footer>
    <div class="author">
-    <p>Designed by: Moazzam Ali</p>
+    <div class="footer-line"></div>
+    <p>Developed by: Moazzam Ali</p>
    </div>
   
     <script src="sidra-portfolio.js"></script>
