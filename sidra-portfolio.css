@@ -236,10 +236,12 @@ header.scrolled {
   position: relative;
 }
 .hero-section-signature {
-  font-family: "Space Grotesk", cursive;
+  display: none;
+  font-family: cursive;
   position: absolute;
   color: var(--bg);
-  text-shadow: 1px 1px 5px;
+  text-shadow: 1px 1px 1px;
+  font-weight: 100;
   font-size: 50px;
   bottom: 50px;
   right: -40px;
@@ -599,6 +601,8 @@ header.scrolled {
   #projects-section {padding: 6.3em 2em;}
   .projects-container {grid-template-columns: 1fr;  }
   .project {width: 100%;}
+  .project-back-heading {text-underline-offset: 0.3em; padding: 0 0.1em;}
+  
   
   
 }
