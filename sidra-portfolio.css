@@ -46,7 +46,7 @@ header {
   font-family: "Hind Vadodara",  Arial, Helvetica, sans-serif;
   margin: 0;
   height: 60px;
-  justify-content: space-around;
+  justify-content: center;
   align-items: center;
   background-color: transparent;
   backdrop-filter: blur(0.1em);
@@ -64,16 +64,16 @@ header.scrolled {
   background-color: white;
   border-radius: 5px;
   padding: 5px 5px;
-  margin-right: 10px;
   font-weight: 800;
   font-size: 15px;
 }
 .logo-text {
   color: white;
-  font-size: 20px;
+  font-size: 1.8rem;
 }
 .header-middle-section {
   justify-content: center;
+  margin: 0 14em;
   
 }
 
@@ -147,13 +147,69 @@ header.scrolled {
   font-weight: 600;
   color: var(--dark);
 }
+.sidebar, .fa-bars{
+  display: none;
+}
 /* Responsive Section- Header -----------------------------------------*/
 
 @media (max-width: 500px) {
+  .sidebar {
+    position:fixed; display: flex; flex-direction: column; 
+    padding: 1em 2em;
+    text-decoration: none; 
+    width: 50%; height: 100vh;
+    background-color: var(--bg); 
+    z-index: 3; left: 0; top: 0;
+    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.15);
+
+    transform: translateX(-100%);
+    transition: transform 0.3s ease-in-out;
+    z-index: 6;
+  }
+
+  header{justify-content: flex-start; padding: 0 2em; gap: 8em;}
+ 
+  .fa-bars, .fa-xmark
+  { display: block;
+    width: 25px;
+    margin-top: 0.2em;
+    margin-right: 0.4em;
+    padding-left: 0;
+    z-index: 4;
+  }
+  .fa-bars {
+    filter: invert(1);
+  }
+  .fa-xmark {
+    margin-bottom: 1em;
+  }
   
+  .sidebar-visible{
+    
+    transform: translateX(0);
+  }
+  
+  .sidebar-links-container {
+    display: flex; flex-direction: column; color: var(--light);
+  }
+  .sidebar-links-container a {
+    display: block;
+    text-decoration: none; color: var(--dark);
+    margin-bottom: 1em;
+    padding: 0.5em;
+    border-bottom: 1px solid var(--dark);
+    transition: background-color 0.3s ease;
+  }
+
+  .sidebar-links-container a:hover {
+    background-color: var(--navy);
+    color: var(--bg);
+    border-radius: 5px;
+  }
+
     
 
-    }
+}
 
 
 /* Hero section -------------------------------------------*/

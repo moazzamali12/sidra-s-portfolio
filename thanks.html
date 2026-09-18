@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Hind+Vadodara:wght@300;400;500;600&family=IBM+Plex+Mono:wght@100;200;300;400&family=Space+Grotesk:wght@400;500;700;800;900&display=swap" rel="stylesheet">
+    <style>
+      .hind-vadodara {
+        font-family: "Hind Vadodara", sans-serif;
+        font-style: normal;
+      }
+      *{
+        box-sizing: border-box;
+        margin: 0;
+        text-decoration: none;
+      }
+      body {
+        
+        font-family: "Hind Vadodara", sans-serif;
+        background-color: #0c1f38;
+        display: flex;
+        min-height: 100vh;
+        justify-content: center;
+        align-items: center;
+      }
+      .thank-you-box {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        max-width: 50em;
+        padding: 2em 5em;
+        border-radius: 5px;
+        box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+        background-color: #f1f4f8;
+        color: #0c1f38;
+      }
+      img {
+        width: 80px;
+      }
+      .heading {margin-bottom: 0.5em;}
+      .small-text {margin-bottom: 0.3em;}
+      .reply-soon {margin-bottom: 1.7em;}
+      a {
+        background-color: #cbd1d7;
+        border: none;
+        padding: 0.5em 1.5em;
+        border-radius: 5px;
+        font-size: 1rem;
+        box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+        color: black;
+        transition: padding 0.2s ease-in-out;
+      }
+      a:hover {padding: 0.5em 2.1em;}
+    </style>
+  </head>
+  <body>
+    <div class="thank-you-box">
+      <img src="./images/icons/green-tick.png" alt="a green tick icon"></img>
+      <h1 class="heading">
+        Form submitted successfully!
+      </h1>
+      <p class="small-text">
+        Thank you! The form has been submitted successfully.
+      </p>
+      <p class="reply-soon">
+        We will reply to you soon!
+      </p>
+      <a href="index.html">
+        Go Back
+      </a>
+    </div>
+
+  </body>
+</html>

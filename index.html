@@ -16,6 +16,25 @@
   </head>
   <body>
     <header>
+         <div>
+          <img class="fa-bars" src="./images/icons/bars.png"></img>
+        </div>
+      <nav class="sidebar">
+        <div>
+          <img class="fa-xmark" src="./images/icons/cross.png"></img>
+        </div>
+        
+        <div class="sidebar-links-container">
+          <a  href="#hero-section-bg" class="header-home js-sidebar-link">Home</a>
+          <a  href="#about-me-section" class="hide-header-link js-sidebar-link">About</a>
+          <a  href="#skills-section" class="hide-header-link js-sidebar-link">Skills</a>
+          <a  href="#projects-section" class="js-sidebar-link">Projects</a>
+          <a  href="#experience-section" class="hide-header-link js-sidebar-link">Experience</a>
+          <a  href="#certificates-section" class="hide-header-link js-sidebar-link">Certificates</a>
+          <a  href="#contact-section" class="js-sidebar-link">Contact</a>
+        </div>
+      </nav>
+
       <nav class="header-left-section">
         <h1 class="logo-text">STM.</h1>
       </nav>
@@ -487,22 +506,25 @@
 
       <div class="contact-resume-div">
         <div class="contact-left-section">
-        <form action="" class="custom-form">
+
+        <form action="https://api.web3forms.com/submit" method="POST" class="custom-form">
+          <input type="hidden" name="redirect" value="https://moazzamali12.github.io/sidra-s-portfolio/thanks.html">
+
           <div class="form-group">
             <label for="name">NAME</label>
-            <input type="text" id="name" placeholder="Your Name">
+            <input type="text" id="name" name="name" placeholder="Your Name">
           </div>
           <div class="form-group">
             <label for="Email">EMAIL</label>
-            <input type="text"  id="Email" placeholder="Your Email">
+            <input type="text"  id="Email" name="Email" placeholder="Your Email">
           </div>
           <div class="form-group">
             <label for="Contact-no">CONTACT NO.</label>
-            <input type="tel" id="Contact-no" placeholder="Contact Number">
+            <input type="tel" id="Contact-no" name="phone" placeholder="Contact Number">
           </div>
           <div class="form-group">
             <label for="message">MESSAGE</label>
-            <textarea name="message" class="message-box" placeholder="Type your message here."></textarea>
+            <textarea name="message" class="message-box" name="message" placeholder="Type your message here."></textarea>
           </div>
           <input type="submit" name="submit" id="" value="Send Message" class="send-button">
           

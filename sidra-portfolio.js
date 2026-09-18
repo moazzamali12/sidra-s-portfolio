@@ -174,7 +174,27 @@ let dataBtnElement = document.querySelector('.js-data-tool-btn');
       .innerHTML = toolsHtml;   
     });
 
+/*  ============== sidebar section below ====================== */
+  const sidebarElem = document.querySelector('.sidebar')
+  const barElem = document.querySelector('.fa-bars');
+  const crossElem = document.querySelector('.fa-xmark');
+  const sidebarLinksElem = document.querySelectorAll('.js-sidebar-link');
+  document.addEventListener('click', (event)=> {
+    if(barElem.contains(event.target)){
+      sidebarElem.classList.add("sidebar-visible")
+    }
+    else if(!sidebarElem.contains(event.target) || crossElem.contains(event.target)) {
+      sidebarElem.classList.remove("sidebar-visible")
+    } 
     
+    else sidebarLinksElem.forEach((link) => {
+        link.addEventListener('click', ()=> {
+          sidebarElem.classList.remove("sidebar-visible")
+        })
+    })
+  })
+ 
+/* ====================================================================== */ 
 
    document.querySelectorAll('*').forEach(el => {
   if (el.getBoundingClientRect().right > document.documentElement.clientWidth + 1) {
