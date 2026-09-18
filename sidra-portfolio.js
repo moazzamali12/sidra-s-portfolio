@@ -10,7 +10,7 @@ document.addEventListener('scroll', () => {
 const toggleElem = document.querySelector('.toggle-button');
 const toggleImg = document.querySelector('.toggle-button img')
 
-document.addEventListener('click', () => {
+toggleElem.addEventListener('click', () => {
   const isDark = document.body.classList.toggle('dark-mode');
 
   if(isDark) {
