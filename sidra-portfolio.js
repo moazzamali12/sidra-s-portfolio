@@ -6,6 +6,24 @@ document.addEventListener('scroll', () => {
   header.classList.toggle('scrolled', window.scrollY > hero.offsetHeight - 60)
 });
 
+/* =============  dark mode code below =========== */
+const toggleElem = document.querySelector('.toggle-button');
+const toggleImg = document.querySelector('.toggle-button img')
+
+document.addEventListener('click', () => {
+  const isDark = document.body.classList.toggle('dark-mode');
+
+  if(isDark) {
+    toggleImg.src = "images/icons/sun.png"
+  } else {
+    toggleImg.src = "images/icons/moon.png"
+  }
+
+})
+
+
+/* ============================================= */
+
 const tools = {
   design: [{
     name: 'Eplan Electric P8', desc: 'Advanced electrical CAD design',
@@ -179,6 +197,14 @@ let dataBtnElement = document.querySelector('.js-data-tool-btn');
   const barElem = document.querySelector('.fa-bars');
   const crossElem = document.querySelector('.fa-xmark');
   const sidebarLinksElem = document.querySelectorAll('.js-sidebar-link');
+
+  sidebarLinksElem.forEach((link) => {
+        link.addEventListener('click', ()=> {
+          sidebarElem.classList.remove("sidebar-visible")
+        })
+    })
+
+
   document.addEventListener('click', (event)=> {
     if(barElem.contains(event.target)){
       sidebarElem.classList.add("sidebar-visible")
@@ -187,11 +213,6 @@ let dataBtnElement = document.querySelector('.js-data-tool-btn');
       sidebarElem.classList.remove("sidebar-visible")
     } 
     
-    else sidebarLinksElem.forEach((link) => {
-        link.addEventListener('click', ()=> {
-          sidebarElem.classList.remove("sidebar-visible")
-        })
-    })
   })
  
 /* ====================================================================== */ 

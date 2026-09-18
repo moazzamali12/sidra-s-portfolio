@@ -17,6 +17,10 @@
   --dark: #0c1f38;
   --text: #5a6a7a;
   --light: #a9b9c9;
+
+  --page: #ffffff;   /* main page background */
+  --card: #ffffff;   /* cards, pills */
+
 }
 *{
   font-family: "Hind Vadodara",  Arial, Helvetica, sans-serif;
@@ -27,10 +31,19 @@
 }
 html {
   scroll-behavior: smooth;
-  scroll-padding-top: 70px;
+  scroll-padding-top: 60px;
 }
-body {
-  /*still thinking what can go here*/
+body.dark-mode {
+  --navy: #0c1f38;      /* SAME — hero/footer pehle se dark, touch nahi */
+  --blue: #4a7bb5;      /* LIGHTER blue — dark pe buttons visible rehne ke liye */
+  --bg: #0f1b2b;        /* light gray → DARK section background */
+  --dark: #e8eef5;      /* headings ka color → LIGHT (naam pe mat jao, kaam dekho!) */
+  --text: #9fb0c0;      /* paragraphs → halka light gray */
+  --light: #a9b9c9;     /* SAME — pehle se navy pe use hota tha */
+
+  --page: #0a1626;    /* main page bg — bg se bhi thoda darker */
+  --card: #16273b;    /* cards — dark navy cards */
+
 
 }
 button {
@@ -153,6 +166,14 @@ header.scrolled {
 /* Responsive Section- Header -----------------------------------------*/
 
 @media (max-width: 500px) {
+  .header-middle-section { display: none; }
+  .header-resume-button {display: none;}  
+  .toggle-button{
+    background: transparent;
+    filter: invert(1);
+    margin-top: 7px;
+  }
+  .toggle-button img{width: 20px; height: 20px;}
   .sidebar {
     position:fixed; display: flex; flex-direction: column; 
     padding: 1em 2em;
@@ -760,6 +781,7 @@ header.scrolled {
 }
 /* responsive certifications section ----------------------- */
 @media (max-width: 900px) {
+  
   .certifications-container {flex-wrap: wrap; gap: 40px;}
   .certification-box {width: 140px}
   .cert-logo {width: 130px;}
@@ -961,9 +983,7 @@ footer {
   .footer-social-links {display: block; margin: 0 auto; text-align: center;}
 }
 /* ============ RESPONSIVE — bottom of file ============ */
-@media (max-width: 900px) {
-  .header-middle-section { display: none; }
-  .header-right-section {display: none;}  /* temporary, hamburger aayega */
+
 /*
   .hero-section {
     flex-direction: column; height: auto; gap: 60px;
