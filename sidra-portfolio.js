@@ -24,6 +24,72 @@ toggleElem.addEventListener('click', () => {
 
 /* ============================================= */
 
+/*  ============== sidebar section below ====================== */
+  const sidebarElem = document.querySelector('.sidebar')
+  const barElem = document.querySelector('.fa-bars');
+  const crossElem = document.querySelector('.fa-xmark');
+  const sidebarLinksElem = document.querySelectorAll('.js-sidebar-link');
+
+  sidebarLinksElem.forEach((link) => {
+        link.addEventListener('click', ()=> {
+          sidebarElem.classList.remove("sidebar-visible")
+        })
+    })
+
+
+  document.addEventListener('click', (event)=> {
+    if(barElem.contains(event.target)){
+      sidebarElem.classList.add("sidebar-visible")
+    }
+    else if(!sidebarElem.contains(event.target) || crossElem.contains(event.target)) {
+      sidebarElem.classList.remove("sidebar-visible")
+    } 
+    
+  })
+ 
+/* ====================================================================== */ 
+
+
+/* ====================Experience numbers counter animation below ============== */
+const numberElems = document.querySelectorAll('.about-me-bold-numbers[data-target]');
+
+function countUp (elem) {
+  const target = Number(elem.dataset.target);
+  const duration = 2000;
+  const startTime = performance.now();
+
+    function update(now) {
+      const progress = (now - startTime) / duration;
+
+      if(progress >= 1) {
+        elem.textContent = target + "+";
+        return;
+      }
+
+      const eased = 1 - Math.pow(1 - progress, 3);
+      elem.textContent = Math.round(eased * target) + "+";
+
+      requestAnimationFrame(update);
+    }
+  requestAnimationFrame(update);
+}
+
+const observer = new IntersectionObserver((entries, obs) => {
+  entries.forEach(entry => {
+    if(entry.isIntersecting) {
+      countUp(entry.target);
+      obs.unobserve(entry.target);
+    }
+  });
+}, {threshold: 0.5});
+
+numberElems.forEach(el => observer.observe(el));
+
+
+/* ============================================= */
+
+/* ====================Tools and skills dispaly and selection below ============== */
+
 const tools = {
   design: [{
     name: 'Eplan Electric P8', desc: 'Advanced electrical CAD design',
@@ -192,35 +258,5 @@ let dataBtnElement = document.querySelector('.js-data-tool-btn');
       .innerHTML = toolsHtml;   
     });
 
-/*  ============== sidebar section below ====================== */
-  const sidebarElem = document.querySelector('.sidebar')
-  const barElem = document.querySelector('.fa-bars');
-  const crossElem = document.querySelector('.fa-xmark');
-  const sidebarLinksElem = document.querySelectorAll('.js-sidebar-link');
 
-  sidebarLinksElem.forEach((link) => {
-        link.addEventListener('click', ()=> {
-          sidebarElem.classList.remove("sidebar-visible")
-        })
-    })
-
-
-  document.addEventListener('click', (event)=> {
-    if(barElem.contains(event.target)){
-      sidebarElem.classList.add("sidebar-visible")
-    }
-    else if(!sidebarElem.contains(event.target) || crossElem.contains(event.target)) {
-      sidebarElem.classList.remove("sidebar-visible")
-    } 
-    
-  })
- 
-/* ====================================================================== */ 
-
-   document.querySelectorAll('*').forEach(el => {
-  if (el.getBoundingClientRect().right > document.documentElement.clientWidth + 1) {
-    el.style.outline = '2px solid red';
-    console.log('CULPRIT:', el.className || el.tagName, 
-                '→ overflow:', Math.round(el.getBoundingClientRect().right - document.documentElement.clientWidth) + 'px');
-  }
-});
+  

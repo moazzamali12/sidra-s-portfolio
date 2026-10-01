@@ -20,7 +20,8 @@
 
   --page: #ffffff;   /* main page background */
   --card: #ffffff;   /* cards, pills */
-
+  --text-black:#000000;
+  --porject-front: #fcfcfc;
 }
 *{
   font-family: "Hind Vadodara",  Arial, Helvetica, sans-serif;
@@ -36,14 +37,23 @@ html {
 body.dark-mode {
   --navy: #0c1f38;      /* SAME — hero/footer pehle se dark, touch nahi */
   --blue: #4a7bb5;      /* LIGHTER blue — dark pe buttons visible rehne ke liye */
-  --bg: #0f1b2b;        /* light gray → DARK section background */
+  --bg: #0f1b2b; 
+  --bg: #0c1f38;
+  /* --bg: #0c1f38;  */
+         /* light gray → DARK section background */
   --dark: #e8eef5;      /* headings ka color → LIGHT (naam pe mat jao, kaam dekho!) */
   --text: #9fb0c0;      /* paragraphs → halka light gray */
   --light: #a9b9c9;     /* SAME — pehle se navy pe use hota tha */
 
-  --page: #0a1626;    /* main page bg — bg se bhi thoda darker */
-  --card: #16273b;    /* cards — dark navy cards */
-
+  --page: #0a1626;
+  --page: #0c1f38;     /* main page bg — bg se bhi thoda darker */
+  --card: #16273b; 
+  --text-black:#ffffff; 
+  --porject-front: #fcfcfc;
+    /* cards — dark navy cards */
+  .project, section, footer {
+    box-shadow: 0 0 10px 1px rgba(255, 255, 255, 0.2);
+  }
 
 }
 button {
@@ -82,7 +92,7 @@ header.scrolled {
 }
 .logo-text {
   color: white;
-  font-size: 1.8rem;
+  font-size: 1.6rem;
 }
 .header-middle-section {
   justify-content: center;
@@ -158,7 +168,7 @@ header.scrolled {
 }
 .header-resume-button a{
   font-weight: 600;
-  color: var(--dark);
+  color: #0a1626;
 }
 .sidebar, .fa-bars{
   display: none;
@@ -193,7 +203,7 @@ header.scrolled {
   .fa-bars, .fa-xmark
   { display: block;
     width: 25px;
-    margin-top: 0.2em;
+    margin-top: 0.1em;
     margin-right: 0.4em;
     padding-left: 0;
     z-index: 4;
@@ -367,7 +377,7 @@ header.scrolled {
 
 /* About me section --------------------------------------------- */
 #about-me-section {
-  background-color: white;
+  background-color: var(--page);
   display: flex;
   gap: 180px;
   justify-content: center;
@@ -476,9 +486,11 @@ header.scrolled {
   justify-content: center;
   gap: 15px;
   
+  
 }
 .skills-button {
-  background-color: white;
+  background-color: var(--card);
+  color: var(--text-black);
   border: none;
   font-size: 15px;
   font-weight: 500;
@@ -502,13 +514,13 @@ header.scrolled {
   
 }
 .tool-card {
-  background-color: #ffffff;
+  background-color: var(--card);
   display: flex;
   flex-direction: column;
   padding: 30px;
   box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.15);
   border-radius: 5px;
-  border-bottom:4px solid var(--blue);
+  border-bottom: 7px solid var(--blue);
   transition: transform 0.3s ease;
   
 }
@@ -532,7 +544,7 @@ header.scrolled {
   font-size: 20px;
   font-weight: 600;
   margin-top: 20px;
-  color: rgb(0, 0, 0);
+  color: var(--text-black);
   margin-bottom: 10px;
 
 }
@@ -550,6 +562,7 @@ header.scrolled {
 /* Projects Section ------------------------- */
 #projects-section {
   padding: 6.3em 0;
+  background-color: var(--page);
 }
 .projects-container {
   display: grid;
@@ -575,13 +588,20 @@ header.scrolled {
   font-weight: 700;
   color: var(--dark);
 }
+
 .project {
   display: flex;
   flex-direction: column;
   border-radius: 15px;
-  box-shadow: 0px 1px 4px rgba(0, 0, 0, 0.2);
+  box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
   background-color: transparent;
   perspective: 2000px;
+}
+.project-front {
+  position: relative;
+  background-color: var(--porject-front);
+  border-radius: 15px;
+  
 }
 .project-inner {
   position: relative;
@@ -593,10 +613,7 @@ header.scrolled {
 .project:hover .project-inner {
   transform: rotateY(180deg);
 }
-.project-front {
-  position: relative;
-  
-}
+
 .project-front, .project-back {
   width: 100%;
   height: 100%;
@@ -626,13 +643,13 @@ header.scrolled {
   font-family: "Space Grotesk", sans-serif;
   font-size: 1.3rem;
   font-weight: 600;
-  color: rgb(30, 30, 30);
+  color: var(--navy);
   margin: 0 20px 10px 20px;
 }
 .project-description {
   font-size: 1rem;
   line-height: 1.8;
-  color: var(--text);
+  color: #5a6a7a;
   margin: 0 20px 10px 20px;
 }
 .project-buttons-container {
@@ -691,7 +708,7 @@ header.scrolled {
 }
 .career-path {
   font-family: 'ibm plex mono', monospace;
-  color: var(--blue);
+   color: var(--blue);
    font-weight: 500;
    font-size: 1rem;
    margin: 0 0 1em 0;
@@ -730,6 +747,7 @@ header.scrolled {
   font-weight: 700;
   font-size: 1.35rem;
   margin-top: 0.5em;
+  color: var(--text-black);
 }
 .exp-company {
   color: var(--blue);
@@ -746,6 +764,7 @@ header.scrolled {
 /* Certificates section ----------------------- */
 #certificates-section {
   padding: 6.3em 0;
+  background-color: var(--page);
 }
 .certifications-container {
   display: flex;
@@ -773,6 +792,9 @@ header.scrolled {
   margin-bottom: 20px;
   border-radius: 1em;
   
+}
+.certificate-name{
+  color: var(--text-black);
 }
 .certification-box div{
   width: 200px;
@@ -812,7 +834,7 @@ header.scrolled {
 .form-group label{
   display: block;
   margin-bottom: 5px;
-  color: rgb(28, 28, 28);
+  color: var(--dark);
   font-size: 14px;
 }
 .form-group input{
@@ -846,12 +868,13 @@ header.scrolled {
 .resume-icon {
   background-color: white;
   width: 80px;
-  padding: 19px;
+  padding: 15px;
   border-radius: 5px;
   margin-bottom: 35px;
   box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
 }
 .resume-heading {
+  color: var(--dark);
   font-size: 20px;
   font-weight: 700;
   margin-bottom: 20px;
@@ -956,8 +979,16 @@ footer {
 .footer-line {
   width: 75%;
   margin: 0 auto;
-  border-bottom: 0.5px solid gray;
+  border-bottom: 0.25px solid gray;
   
+}
+.author-link{
+  text-decoration: none;
+  color: var(--light);
+}
+.author-link:hover {
+  font-size: 0.7rem;
+  text-decoration: underline;
 }
 .author {
   background-color: var(--navy);
@@ -967,10 +998,10 @@ footer {
 }
 .author p{
   font-family: 'ibm plex mono', monospace;
-  letter-spacing: 0.12rem;
+  letter-spacing: 0.1rem;
+  word-spacing: 0.1rem;
   text-align: center;
-  font-size: 0.75rem;
-  letter-spacing: 2px;
+  font-size: 0.65rem;
   margin: 0.4em 0;
 
 }
@@ -982,37 +1013,3 @@ footer {
   .footer-links {width: 100%; text-align: center;}
   .footer-social-links {display: block; margin: 0 auto; text-align: center;}
 }
-/* ============ RESPONSIVE — bottom of file ============ */
-
-/*
-  .hero-section {
-    flex-direction: column; height: auto; gap: 60px;
-    padding: 130px 24px 80px; text-align: center;
-  }
-  .hero-section-text { align-items: center; margin-top: 0; }
-  .hero-section-right { width: 100%; max-width: 450px; height: auto; margin: 0 auto; }
-  .hero-section-signature { right: 10px; }
-
-  #about-me-section { flex-direction: column; gap: 60px; padding: 60px 24px; }
-  .about-me-left-section { width: 100%; max-width: 450px; margin: 0 auto; }
-  .about-me-image { width: 100%; }
-
-  .tools-cards-container {
-    width: 100%; max-width: 1200px; margin: 65px auto; padding: 0 20px;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  }
-  .tools-selector-buttons { flex-wrap: wrap; padding: 0 20px; }
-
-  .projects-container { grid-template-columns: 1fr; padding: 0 24px; }
-  
-  .certifications-container { flex-wrap: wrap; padding: 0 20px; }
-
-  .contact-resume-div { flex-direction: column; align-items: center; gap: 60px; padding: 0 24px; }
-  .custom-form { width: 100%; max-width: 500px; }
-  .form-group input { width: 100%; }
-  .message-box { width: 100%; }
-
-  footer { flex-direction: column; align-items: center; gap: 3em; padding: 3em 24px; text-align: center; }
-  .footer-left-section, .footer-links { width: 100%; max-width: 400px; }
-*/
-  }
