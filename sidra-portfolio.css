@@ -11,17 +11,33 @@
   font-style: normal;
 }
 :root {
-  --navy: #0c1f38;
-  --blue: #1e4976;
-  --bg: #f1f4f8;
-  --dark: #0c1f38;
-  --text: #5a6a7a;
-  --light: #a9b9c9;
-
-  --page: #ffffff;   /* main page background */
-  --card: #ffffff;   /* cards, pills */
-  --text-black:#000000;
+  --navy: #2B0A12;
+  --blue: #BE123C;
+  --bg: #FBF4F5;
+  --dark: #2B0A12;
+  --text: #6E5560;
+  --light: #E0AFBD;
+  --page: #FFFAFA;
+  --card: #ffffff;
+  --text-black: #2B0A12;
   --porject-front: #fcfcfc;
+}
+body.dark-mode {
+ --navy: #200810;
+  --blue: #F43F5E;
+  --bg: #1F0A12;
+  --dark: #F9E8EC;
+  --text: #C79BAA;
+  --light: #DCA8B6;
+  --page: #150609;
+  --card: #2A1320;
+  --text-black: #F9E8EC;
+  --porject-front: #fcfcfc;
+    /* cards — dark navy cards */
+  .project, section, footer {
+    box-shadow: 0 0 10px 1px rgba(255, 255, 255, 0.2);
+  }
+
 }
 *{
   font-family: "Hind Vadodara",  Arial, Helvetica, sans-serif;
@@ -34,28 +50,7 @@ html {
   scroll-behavior: smooth;
   scroll-padding-top: 60px;
 }
-body.dark-mode {
-  --navy: #0c1f38;      /* SAME — hero/footer pehle se dark, touch nahi */
-  --blue: #4a7bb5;      /* LIGHTER blue — dark pe buttons visible rehne ke liye */
-  --bg: #0f1b2b; 
-  --bg: #0c1f38;
-  /* --bg: #0c1f38;  */
-         /* light gray → DARK section background */
-  --dark: #e8eef5;      /* headings ka color → LIGHT (naam pe mat jao, kaam dekho!) */
-  --text: #9fb0c0;      /* paragraphs → halka light gray */
-  --light: #a9b9c9;     /* SAME — pehle se navy pe use hota tha */
 
-  --page: #0a1626;
-  --page: #0c1f38;     /* main page bg — bg se bhi thoda darker */
-  --card: #16273b; 
-  --text-black:#ffffff; 
-  --porject-front: #fcfcfc;
-    /* cards — dark navy cards */
-  .project, section, footer {
-    box-shadow: 0 0 10px 1px rgba(255, 255, 255, 0.2);
-  }
-
-}
 button {
   cursor: pointer;
   transition: transform 0.3s ease;
@@ -80,7 +75,7 @@ header {
   z-index: 10;
 }
 header.scrolled {
-  background-color: rgb(21, 31, 56, 0.9);
+  background-color: rgba(43, 10, 18, 0.9);
   backdrop-filter: blur(1em);
 }
 .logo {
@@ -138,6 +133,7 @@ header.scrolled {
   align-items: center;
 }
 .toggle-button {
+  background: transparent;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -146,29 +142,32 @@ header.scrolled {
   border: none;
 }
 .toggle-button img {
-  width: 16px;
-  height: 16px;
+  filter: invert(1);
+  width: 20px;
+  height: 20px;
   padding: 0;
   margin: 0;
 }
 
 .header-resume-button {
+  background: transparent;
   display: flex;
   margin: 0 0 0 20px;
   align-items: center;
   padding: 6.5px 15px;
   border-radius: 5px;
-  border: none;
+  border: 1px solid #FBF4F5;
 }
 .header-resume-button img{
+  filter: invert(1);
   width: 17px;
   height: 17px;
   margin: 0 6px 0 0;
   padding: 0;
 }
 .header-resume-button a{
-  font-weight: 600;
-  color: #0a1626;
+  font-weight: 500;
+  color: #FBF4F5;
 }
 .sidebar, .fa-bars{
   display: none;
@@ -180,7 +179,6 @@ header.scrolled {
   .header-resume-button {display: none;}  
   .toggle-button{
     background: transparent;
-    filter: invert(1);
     margin-top: 7px;
   }
   .toggle-button img{width: 20px; height: 20px;}
@@ -189,7 +187,8 @@ header.scrolled {
     padding: 1em 2em;
     text-decoration: none; 
     width: 50%; height: 100vh;
-    background-color: var(--bg); 
+    background-color: var(--blue); 
+    
     z-index: 3; left: 0; top: 0;
     box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.15);
 
@@ -212,6 +211,7 @@ header.scrolled {
     filter: invert(1);
   }
   .fa-xmark {
+    filter: invert(1);
     margin-bottom: 1em;
   }
   
@@ -225,16 +225,16 @@ header.scrolled {
   }
   .sidebar-links-container a {
     display: block;
-    text-decoration: none; color: var(--dark);
+    text-decoration: none; color: var(--page);
     margin-bottom: 1em;
     padding: 0.5em;
-    border-bottom: 1px solid var(--dark);
+    border-bottom: 1px solid var(--page);
     transition: background-color 0.3s ease;
   }
 
   .sidebar-links-container a:hover {
-    background-color: var(--navy);
-    color: var(--bg);
+    background-color: var(--light);
+    color: var(--blue);
     border-radius: 5px;
   }
 
@@ -254,7 +254,7 @@ header.scrolled {
   padding: 6.3em 0 0 0;
 }
 #hero-section-bg {
-  background-image: linear-gradient(to bottom right, var(--navy), #1c3a53 );
+  background-image: linear-gradient(to bottom right, var(--navy), #521A2E);
   
  
 }
@@ -268,12 +268,12 @@ header.scrolled {
   font-family: "Hind Vadodara",  Arial, Helvetica, sans-serif;
   color: white;
   font-weight: 400;
-  margin: 0;
+  margin: 0 0 0 2px;
 }
 .hero-section-name {
   font-family: "Space Grotesk", Arial, Helvetica, sans-serif;
   font-weight: 700;
-  font-size: 3.5rem;
+  font-size: 3.8rem;
   color: white;
   margin: 0;
 }
@@ -286,11 +286,12 @@ header.scrolled {
   color: white;
   font-size: 1.5rem;
   font-weight: 500;
-  margin: 6px 0 0 0;
+  margin: 12px 0 0 0;
 }
 .hero-section-description {
   font-family: "Hind Vadodara",  Arial, Helvetica, sans-serif;
   color: var(--light);
+  margin: 6px 0 0 0;
 }
 .view-projects-button {
   font-family: "Hind Vadodara",  Arial, Helvetica, sans-serif;
@@ -305,7 +306,7 @@ header.scrolled {
   background-color: var(--blue);
   color: white;
   box-shadow: 1px 1px 5px rgb(0, 0, 0, 0.15);
-  margin-top: 20px;
+  margin-top: 2em;
   transition: transform 0.3s ease;
 }
 .view-projects-button:hover {
@@ -318,31 +319,21 @@ header.scrolled {
   max-width: 450px;
   height: 80%;
   border-radius: 5px;
-  /* background-color: rgb(226, 226, 226); */
-
   position: relative;
 }
 .hero-section-signature {
   display: none;
-  font-family: cursive;
-  position: absolute;
-  color: var(--bg);
-  text-shadow: 1px 1px 1px;
-  font-weight: 100;
-  font-size: 50px;
-  bottom: 50px;
-  right: -40px;
-  z-index: 2;
-
+  
 }
 .hero-section-circle {
   position: absolute;
-  width: 450px;
-  height: 450px;
-  border-radius: 50%;
-  background-image: linear-gradient(to bottom right, var(--blue), #e8edf3 );
-  top: 90px;
-  right: 20px;
+  width: 380px;
+  height: 380px;
+  border-radius: 6%;
+  background: none;
+  border: 2px solid var(--blue);
+  top: 150px;
+  left: 7px;
   z-index: 1;
 }
 .hero-section-dp {
@@ -387,14 +378,31 @@ header.scrolled {
 .about-me-left-section {
   display: flex;
   max-width: 500px;
-  height: 400px;
+  height: 450px;
+  position: relative;
+  margin-top: 10px;
+}
+.about-me-section-circle {
+  position: absolute;
+  width: 380px;
+  height: 410px;
+  border-radius: 6%;
+  background: #521A2E;
+  border: 2px solid var(--blue);
+  right: -29px;
+  top: 9px;
+  box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+  z-index: 1;
 }
 .about-me-image {
-  width: 130%;
-  height: 100%;
-  object-fit: cover;
-  border-radius: 1em;
+  position: relative;
+  width: 100%;
+  object-fit: contain;
+  margin: 0 0 2em 0;
+  /* border-radius: 0.7em; */
+  z-index: 2;
 }
+
 .about-me-right-section {
   max-width: 600px;
 
@@ -458,6 +466,9 @@ header.scrolled {
   .about-me-numbers div {
     padding-right: 2em;
   } 
+  .about-me-section-circle {
+    background: none;
+  }
 }
 /* Skills section --------------------------------------------------- */
 #skills-section {
@@ -469,15 +480,20 @@ header.scrolled {
   font-family: 'ibm plex mono', monospace;
   color: var(--blue);
   font-weight: 500;
-  font-size: 1rem;
+  letter-spacing: 0.1em;
+  font-size: 0.9rem;
   margin: 0 0 1em 0;
-  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-self: center;
 }
+
 .tools-heading {
   font-family: "Space Grotesk", sans-serif;
   text-align: center;
   margin: 0 0 1.5em 0;
-  font-size: 2.5rem;
+  font-size: 3rem;
+  letter-spacing: -0.02em;
   font-weight: 700;
   color: var(--dark);
 }
@@ -554,6 +570,9 @@ header.scrolled {
 }
 /* responsive skills & tools Section ------------------------- */
 @media (max-width: 900px) {
+  .tools-heading{
+    font-size: 2.2rem;
+  }
   #skills-section {padding: 6.3em 1.8em; height: auto;} 
   .tools-selector-buttons {flex-wrap: wrap; gap: 10px;}
   .tools-cards-container {display: flex; flex-direction: column;}
@@ -577,13 +596,15 @@ header.scrolled {
    color: var(--blue);
    font-weight: 500;
    font-size: 1rem;
+   letter-spacing: 0.1em;
    margin: 0 0 1em 0;
    text-align: center;
 }
 .projects-section-big-heading {
   font-family: "Space Grotesk", sans-serif;
   text-align: center;
-  font-size: 2.5rem;
+  font-size: 3rem;
+  letter-spacing: -0.02em;
   margin: 0 0 1.5em 0;
   font-weight: 700;
   color: var(--dark);
@@ -692,6 +713,9 @@ header.scrolled {
 }
 /* responsive projects section ----------------------- */
 @media (max-width: 900px) {
+  .projects-section-big-heading {
+    font-size: 2.2rem;
+  }
   #projects-section {padding: 6.3em 2em;}
   .projects-container {grid-template-columns: 1fr;  }
   .project {width: 100%;}
@@ -704,20 +728,27 @@ header.scrolled {
 #experience-section {
    background-color: var(--bg);
    height: auto;
-   padding: 6.3em 50px;
+   padding: 6.3em 6.3em;
+}
+.experience-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3em 5em;
 }
 .career-path {
   font-family: 'ibm plex mono', monospace;
    color: var(--blue);
    font-weight: 500;
    font-size: 1rem;
+   letter-spacing: 0.1em;
    margin: 0 0 1em 0;
    text-align: center;
 }
 .experience-heading {
   font-family: "Space Grotesk", sans-serif;
   text-align: center;
-  font-size: 2.5rem;
+  font-size: 3rem;
+  letter-spacing: -0.02em;
   margin: 0 0 1.5em 0;
   font-weight: 700;
   color: var(--dark);
@@ -760,7 +791,30 @@ header.scrolled {
   line-height: 1.8;
   color: var(--text);
 }
-
+@media (max-width: 500px) {
+  .experience-heading {
+    font-size: 2.2rem;
+  }
+   #experience-section {
+    padding: 6.3em 2em;
+  }
+  .experience-grid {
+  display: flex;
+  flex-direction: column;
+}
+.experience-box {
+  border-left: 1px solid #e5e5e5;
+}
+.exp-dot {
+  height: 10px;
+  width: 10px;
+  border: 1px solid white;
+  border-radius: 3px;
+  position: absolute;
+  left: -6px;
+  top: 0px;
+}
+}
 /* Certificates section ----------------------- */
 #certificates-section {
   padding: 6.3em 0;
@@ -915,6 +969,10 @@ header.scrolled {
 @media (max-width: 900px) {
   #contact-section {padding: 6.3em 2em;}
   .contact-resume-div {flex-direction: column; align-items: center; gap: 60px;}
+  .contact-left-section {
+    margin-bottom: 6.3em;
+  }
+  input[type="submit"] {display: block; margin: 2em auto;}
 
 }
 /* Footer section ----------------------- */
@@ -972,7 +1030,7 @@ footer {
   color: white;
   margin-right: 1em;
   font-size: large;
-  background-color: #2c497f58;
+  background-color: #5c182fe1;
   padding: 0.5em;
   border-radius: 5px;
 }
