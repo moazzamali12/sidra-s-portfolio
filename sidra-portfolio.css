@@ -181,7 +181,7 @@ header.scrolled {
     background: transparent;
     margin-top: 7px;
   }
-  .toggle-button img{width: 20px; height: 20px;}
+  .toggle-button img{width: 20px; height: 20px; filter: invert(0);}
   .sidebar {
     position:fixed; display: flex; flex-direction: column; 
     padding: 1em 2em;
@@ -207,11 +207,9 @@ header.scrolled {
     padding-left: 0;
     z-index: 4;
   }
-  .fa-bars {
-    filter: invert(1);
-  }
+  
   .fa-xmark {
-    filter: invert(1);
+    filter: invert(0);
     margin-bottom: 1em;
   }
   
@@ -292,6 +290,8 @@ header.scrolled {
   font-family: "Hind Vadodara",  Arial, Helvetica, sans-serif;
   color: var(--light);
   margin: 6px 0 0 0;
+  
+  
 }
 .view-projects-button {
   font-family: "Hind Vadodara",  Arial, Helvetica, sans-serif;
@@ -456,11 +456,13 @@ header.scrolled {
 @media (max-width: 900px) {
   #about-me-section {flex-direction: column; gap: 50px; padding: 6.3em 2em;}
   .about-me-image {width: 100%;}
-  .about-me {font-size: 0.85rem;}
+  .about-me {font-size: 0.85rem; text-align: center; margin-bottom: 0.65em;}
   .about-me-right-section h1 {
     font-size: 2rem;
-    margin-bottom: 0.5em;
+    margin-bottom: 1em;
+    text-align: center;
   }
+  .about-me-description {text-align: justify;}
   .about-me-numbers {gap: 1.5em;}
   .about-me-bold-numbers {font-size: 1.4rem; margin-bottom: 0.5em;}
   .about-me-numbers div {
@@ -787,10 +789,13 @@ header.scrolled {
 }
 .exp-description {
   margin-top: 8px;
+  margin-left: 1.2em;
   font-size: 15px;
   line-height: 1.8;
+  text-align: justify;
   color: var(--text);
 }
+
 @media (max-width: 500px) {
   .experience-heading {
     font-size: 2.2rem;
@@ -822,7 +827,7 @@ header.scrolled {
 }
 .certifications-container {
   display: flex;
-  gap: 35px;
+  gap: 3em;
   justify-content: center;
   align-items: center;
   
@@ -840,8 +845,8 @@ header.scrolled {
   transform: translateY(-5px);
 }
 .cert-logo {
-  width: 150px;
-  height: 150px;
+  width: 120px;
+  height: 120px;
   overflow: hidden;
   margin-bottom: 20px;
   border-radius: 1em;
